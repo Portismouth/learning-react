@@ -18,7 +18,6 @@ const store = configureStore();
 store.subscribe(() => {
   const state = store.getState();
   const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-  console.log(visibleExpenses);
 });
 
 store.dispatch(
@@ -30,11 +29,6 @@ store.dispatch(
 store.dispatch(
   addExpense({ description: 'Rent', amount: 109500, createdAt: 0 })
 );
-
-
-
-
-console.log(store.getState());
 
 const jsx = (
   <Provider store={store}>
